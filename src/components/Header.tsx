@@ -53,10 +53,10 @@ const Header = () => {
           </nav>
           
           <div className="flex items-center space-x-2">
-            <Button variant="ghost" size="sm">
+            <Button variant="ghost" size="sm" className="hover:text-primary">
               Log in
             </Button>
-            <Button size="sm" className="shadow-primary">
+            <Button size="sm" className="shadow-primary hover:shadow-primary/50 transition-shadow">
               Get Started
             </Button>
           </div>
