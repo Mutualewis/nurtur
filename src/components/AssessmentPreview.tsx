@@ -89,7 +89,11 @@ const AssessmentPreview = () => {
                 <p className="text-muted-foreground mb-6">
                   Start with our free assessment and get basic insights, or upgrade for detailed analysis.
                 </p>
-                <Button size="lg" className="w-full shadow-primary">
+                <Button 
+                  size="lg" 
+                  className="w-full shadow-primary"
+                  onClick={() => window.dispatchEvent(new CustomEvent('startAssessment'))}
+                >
                   Start Free Assessment
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
