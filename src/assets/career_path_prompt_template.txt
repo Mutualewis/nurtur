@@ -1,0 +1,243 @@
+career_path_prompt_template = '''
+[SYSTEM CONFIGURATION]
+
+Confidence Scoring System:
+- Very High: 0.90-1.00 (Strong evidence across multiple indicators)
+- High: 0.80-0.89 (Clear evidence with some supporting factors)
+- Moderate: 0.70-0.79 (Some evidence but requires interpretation)
+- Low: 0.65-0.69 (Weak but sufficient evidence)
+- Insufficient: < 0.65 (Not enough evidence for reliable prediction)
+
+Career Cluster Categories:
+- STEM_TECHNICAL: Engineering, Computer Science, Data Science, Research
+- HEALTHCARE_LIFE: Medicine, Nursing, Veterinary, Biotechnology
+- CREATIVE_ARTS: Design, Music, Writing, Film, Architecture
+- BUSINESS_LEADERSHIP: Management, Entrepreneurship, Finance, Marketing
+- EDUCATION_SOCIAL: Teaching, Social Work, Psychology, Counseling
+- TRADES_PRACTICAL: Construction, Manufacturing, Culinary, Automotive
+- COMMUNICATIONS: Journalism, Public Relations, Broadcasting, Law
+- SERVICE_HOSPITALITY: Tourism, Event Planning, Customer Service
+
+[ANALYSIS PROTOCOL]
+
+You will analyze career potential through three distinct stages:
+
+STAGE 1: Evidence Collection
+- Extract genetic predispositions from parental traits (pre-birth only)
+- Identify demonstrated abilities and interests from child data (post-birth)
+- Note environmental supports and constraints
+- Extract personality indicators and learning preferences
+- Identify behavioral patterns and social tendencies
+
+STAGE 2: Career Cluster Matching with Reasoning
+- Match evidence to career cluster definitions
+- Apply developmental psychology principles for age-appropriate analysis
+- Consider multiple pathway possibilities simultaneously
+- Document reasoning path for transparency
+- Account for growth potential and emerging interests
+
+STAGE 3: Confidence Scoring & Recommendations
+- Evaluate evidence strength for each identified career cluster
+- Calculate confidence scores based on evidence convergence
+- Apply threshold filtering (minimum 0.65)
+- Generate specific activity recommendations
+- Format final output with actionable next steps
+
+[FEW-SHOT EXAMPLES]
+
+Example 1 - Pre-Birth Prediction:
+Input: {
+    "parental_genetics": {
+        "mother_traits": ["analytical", "mathematical", "detail_oriented"],
+        "father_traits": ["problem_solving", "technical_aptitude", "logical_thinking"]
+    },
+    "environmental_factors": {
+        "socioeconomic_status": "upper_middle_class",
+        "geographic_location": "urban",
+        "family_education_level": "graduate"
+    }
+}
+
+Stage 1: Evidence Collection
+- Strong analytical genetics from both parents
+- High mathematical aptitude likelihood
+- Resource-rich environment supporting technical education
+- Urban setting with STEM opportunities
+
+Stage 2: Career Cluster Matching
+Primary Cluster: "STEM_TECHNICAL"
+Evidence: Combined parental analytical and technical traits
+Reasoning: Genetic predisposition toward logical thinking and problem-solving, supported by educational environment
+
+Stage 3: Output
+{
+    "prediction_type": "pre_birth",
+    "career_clusters": [
+        {
+            "cluster": "STEM_TECHNICAL",
+            "confidence": 0.75,
+            "evidence": "Both parents show strong analytical and mathematical traits, high-resource environment",
+            "reasoning": "Genetic predisposition toward logical problem-solving combined with educational resources suggest technical career potential",
+            "recommended_early_activities": ["building_toys", "logic_puzzles", "basic_programming_games"],
+            "environmental_preparations": ["STEM_focused_preschool", "math_enrichment", "science_museum_visits"]
+        }
+    ],
+    "developmental_timeline": {
+        "ages_3_5": "Pattern recognition games, building activities",
+        "ages_6_8": "Basic coding, math competitions, science experiments",
+        "ages_9_12": "Advanced STEM programs, robotics clubs"
+    }
+}
+
+Example 2 - Post-Birth Assessment:
+Input: {
+    "child_profile": {
+        "age": 9,
+        "academic_performance": {
+            "math": 95,
+            "language_arts": 70,
+            "science": 90,
+            "arts": 85
+        },
+        "interests_and_hobbies": ["robotics", "drawing", "video_games"],
+        "personality_quiz_results": {
+            "openness": 0.9,
+            "conscientiousness": 0.8
+        }
+    },
+    "teacher_assessments": {
+        "strengths": ["innovative_problem_solving", "visual_spatial_skills"],
+        "notable_behaviors": ["creates_complex_designs", "helps_debug_others_code"]
+    }
+}
+
+Stage 1: Evidence Collection
+- Exceptional math and science performance (95, 90)
+- High interest in technical activities (robotics, gaming)
+- Strong visual-spatial skills noted by teachers
+- High openness to experience and conscientiousness
+- Demonstrated helping behavior with technical problems
+
+Stage 2: Career Cluster Matching
+Primary Cluster: "STEM_TECHNICAL"
+Evidence: 95 in math, 90 in science, robotics interest, problem-solving strength
+Reasoning: Clear technical aptitude with demonstrated interest and ability
+
+Secondary Cluster: "CREATIVE_ARTS"
+Evidence: 85 in arts, drawing interest, "creates complex designs"
+Reasoning: Strong visual-spatial skills could translate to design-focused careers
+
+Stage 3: Output
+{
+    "prediction_type": "post_birth",
+    "career_clusters": [
+        {
+            "cluster": "STEM_TECHNICAL",
+            "confidence": 0.92,
+            "evidence": "Math: 95, Science: 90, robotics interest, innovative problem-solving",
+            "reasoning": "Exceptional technical performance combined with demonstrated interest in robotics and problem-solving indicates strong STEM trajectory",
+            "specific_career_paths": ["Robotics Engineer", "Software Developer", "Game Designer"],
+            "recommended_activities": ["Advanced robotics camp", "Programming classes", "Math olympiad"],
+            "skills_to_develop": ["Advanced coding", "3D modeling", "Systems thinking"]
+        },
+        {
+            "cluster": "CREATIVE_ARTS",
+            "confidence": 0.78,
+            "evidence": "Arts: 85, drawing interest, creates complex designs, visual-spatial skills",
+            "reasoning": "Strong artistic ability combined with technical skills suggests potential in technical creative fields",
+            "specific_career_paths": ["Game Art Director", "Industrial Designer", "Architectural Visualizer"],
+            "recommended_activities": ["Digital art classes", "3D design software", "Architecture workshops"],
+            "skills_to_develop": ["Digital design tools", "Artistic composition", "Technical drawing"]
+        }
+    ],
+    "integrated_pathway": {
+        "recommended_focus": "Technical Creative Hybrid",
+        "explanation": "Child shows potential to excel in careers that combine technical problem-solving with creative design",
+        "next_12_months": [
+            "Enroll in coding bootcamp with game development focus",
+            "Continue art classes with digital media component",
+            "Join robotics team with design challenge component"
+        ]
+    },
+    "comparison_with_pre_birth": {
+        "alignment_score": 0.85,
+        "confirmed_predictions": ["STEM aptitude", "Technical problem-solving"],
+        "new_discoveries": ["Creative design talent", "Visual-spatial strength"],
+        "adjusted_recommendations": "Original STEM focus expanded to include technical creative fields"
+    }
+}
+
+[CAREER CLUSTER DEFINITIONS]
+
+career_clusters = {
+    "STEM_TECHNICAL": "Engineering, computer science, data analysis, research, and technical problem-solving roles. Keywords: math excellence, logical thinking, system analysis, coding, robotics, scientific method, innovation, technical debugging, pattern recognition.",
+
+    "HEALTHCARE_LIFE": "Medical, nursing, veterinary, biotechnology, and life science careers focused on helping others through scientific knowledge. Keywords: biology interest, empathy, helping behavior, attention to detail, science aptitude, care-giving, problem diagnosis, life systems.",
+
+    "CREATIVE_ARTS": "Design, music, writing, visual arts, and creative expression careers. Keywords: artistic ability, creativity, aesthetic sense, storytelling, visual-spatial skills, emotional expression, original thinking, cultural appreciation.",
+
+    "BUSINESS_LEADERSHIP": "Management, entrepreneurship, finance, marketing, and organizational leadership roles. Keywords: leadership tendency, persuasion, strategic thinking, financial aptitude, team organization, goal achievement, competitive drive, people management.",
+
+    "EDUCATION_SOCIAL": "Teaching, social work, psychology, counseling, and human development careers. Keywords: helping others, patience, communication skills, emotional intelligence, mentoring behavior, social justice interest, child development, learning facilitation.",
+
+    "TRADES_PRACTICAL": "Skilled manual work, construction, manufacturing, culinary, and hands-on technical careers. Keywords: manual dexterity, practical problem-solving, hands-on learning, building/fixing things, physical coordination, tool usage, craftsmanship.",
+
+    "COMMUNICATIONS": "Journalism, public relations, law, broadcasting, and information-sharing careers. Keywords: verbal skills, writing ability, persuasion, current events interest, debate participation, storytelling, information synthesis, public speaking.",
+
+    "SERVICE_HOSPITALITY": "Customer service, tourism, event planning, and people-focused service careers. Keywords: interpersonal skills, cultural sensitivity, organization, people-pleasing, event coordination, travel interest, hospitality, customer focus."
+}
+
+[PROCESSING INSTRUCTIONS]
+
+Analyze the following career prediction data using the three-stage process:
+
+{input_data}
+
+For your analysis:
+
+1. If no career clusters match with confidence >= 0.65:
+   {
+       "career_clusters": [
+           {
+               "cluster": "INSUFFICIENT_DATA",
+               "confidence": 0.0,
+               "evidence": "Limited indicators available",
+               "reasoning": "Not enough clear evidence to make reliable career cluster predictions (>= 0.65 confidence threshold)"
+           }
+       ]
+   }
+
+2. For valid predictions, maintain this exact format:
+   {
+       "prediction_type": "pre_birth/post_birth",
+       "career_clusters": [
+           {
+               "cluster": "<cluster_name>",
+               "confidence": <float >= 0.65>,
+               "evidence": "<specific indicators from input>",
+               "reasoning": "<developmental and psychological explanation>",
+               "specific_career_paths": ["<career1>", "<career2>", "<career3>"],
+               "recommended_activities": ["<activity1>", "<activity2>"],
+               "skills_to_develop": ["<skill1>", "<skill2>"]
+           }
+       ],
+       "developmental_timeline": {
+           "next_6_months": "<immediate recommendations>",
+           "next_12_months": "<medium-term goals>",
+           "ages_X_Y": "<longer-term pathway>"
+       }
+   }
+
+[CRITICAL RULES]
+
+1. Only assign clusters with confidence ≥ 0.65
+2. Always provide specific evidence from input data
+3. Consider developmental appropriateness for child's age
+4. Pre-birth predictions should focus on genetic predispositions and environmental preparation
+5. Post-birth predictions should prioritize demonstrated abilities and interests
+6. Include comparison with pre-birth predictions when both are available
+7. Recommendations must be actionable and age-appropriate
+8. Use child-friendly explanations in the reasoning sections
+9. Account for multiple intelligence types in analysis
+10. Consider cultural and socioeconomic factors in recommendations
+'''
