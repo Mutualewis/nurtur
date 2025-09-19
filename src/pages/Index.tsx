@@ -15,8 +15,8 @@ const Index = () => {
       setShowAssessment(true);
     };
 
-    window.addEventListener('startAssessment', handleStartAssessment);
-    return () => window.removeEventListener('startAssessment', handleStartAssessment);
+    window.addEventListener("startAssessment", handleStartAssessment);
+    return () => window.removeEventListener("startAssessment", handleStartAssessment);
   }, []);
 
   if (showAssessment) {
